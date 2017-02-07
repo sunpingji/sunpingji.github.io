@@ -44,7 +44,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 " />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>My TiddlyWiki — a non-linear personal web notebook</title>
+<title>wiki — a personal web notebook</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~--><!--~~ Raw markup ~~-->
 
 </head>
@@ -121,11 +121,21 @@ Error message and password prompt
 
 <li>$:/core</li>
 
+<li>$:/DefaultTiddlers</li>
+
 <li>$:/isEncrypted</li>
+
+<li>$:/SiteSubtitle</li>
+
+<li>$:/SiteTitle</li>
 
 <li>$:/state/tab/sidebar--1835078512</li>
 
 <li>$:/state/toc/TableOfContents-New Tiddler 1--81657105</li>
+
+<li>$:/state/toc/TableOfContents-Technology--81657105</li>
+
+<li>$:/state/toc/Technology-Network--81657105</li>
 
 <li>$:/StoryList</li>
 
@@ -139,13 +149,19 @@ Error message and password prompt
 
 <li>a2</li>
 
-<li>New Tiddler</li>
+<li>Android</li>
 
-<li>New Tiddler 1</li>
+<li>BBR</li>
 
-<li>New Tiddler 2</li>
+<li>Network</li>
+
+<li>Personal</li>
+
+<li>shadowsocks</li>
 
 <li>TableOfContents</li>
+
+<li>Technology</li>
 
 <li>test</li>
 
@@ -7807,16 +7823,31 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20170207083430222" modified="20170207083430222" title="$:/DefaultTiddlers">
+<pre>[list[$:/StoryList]]</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20170207074247841" modified="20170207074530382" title="$:/state/tab/sidebar--1835078512">
+<div created="20170207083259457" modified="20170207083317148" title="$:/SiteSubtitle">
+<pre>a personal web notebook</pre>
+</div>
+<div created="20170207083212617" modified="20170207083308245" title="$:/SiteTitle">
+<pre>wiki</pre>
+</div>
+<div created="20170207074247841" modified="20170207083447271" title="$:/state/tab/sidebar--1835078512">
 <pre>TableOfContents</pre>
 </div>
 <div created="20170207074729628" modified="20170207074729628" title="$:/state/toc/TableOfContents-New Tiddler 1--81657105">
 <pre>open</pre>
 </div>
-<div list="[[New Tiddler 2]] [[New Tiddler 1]] [[New Tiddler]] TableOfContents a2 a1 test GettingStarted" title="$:/StoryList">
+<div created="20170207083919061" modified="20170207083919061" title="$:/state/toc/TableOfContents-Technology--81657105">
+<pre>open</pre>
+</div>
+<div created="20170207084118545" modified="20170207084118545" title="$:/state/toc/Technology-Network--81657105">
+<pre>open</pre>
+</div>
+<div list="BBR shadowsocks Network Personal Technology Android" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -7948,14 +7979,43 @@ Error message and password prompt
 <div created="20170207074356756" modified="20170207074402100" tags="test" title="a2">
 <pre>a2</pre>
 </div>
-<div created="20170207074619198" modified="20170207074627497" tags="TableOfContents" title="New Tiddler">
-<pre>a1</pre>
-</div>
-<div created="20170207074644876" modified="20170207074659258" tags="TableOfContents" title="New Tiddler 1">
+<div created="20170207074619198" modified="20170207083756720" tags="TableOfContents" title="Android">
 <pre></pre>
 </div>
-<div created="20170207074723433" modified="20170207074728402" tags="[[New Tiddler 1]]" title="New Tiddler 2">
+<div created="20170207084120794" modified="20170207084211144" tags="Network" title="BBR">
+<pre>Ubuntu
+Ubuntu install bbr manual：
+$ mkdir linux49; cd linux49
+$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9/linux-headers-4.9.0-040900-generic_4.9.0-040900.201612111631_amd64.deb
+$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9/linux-image-4.9.0-040900-generic_4.9.0-040900.201612111631_amd64.deb
+$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9/linux-headers-4.9.0-040900_4.9.0-040900.201612111631_all.deb
+$ sudo dpkg -i *.deb
+after update this generic    reboot our vps.
+open our BBR
+sysctl net.core.default_qdisc=fq
+sysctl net.ipv4.tcp_congestion_control=bbr
+</pre>
+</div>
+<div created="20170207083852915" modified="20170207083917820" tags="Technology" title="Network">
 <pre></pre>
+</div>
+<div created="20170207074644876" modified="20170207083746000" tags="TableOfContents" title="Personal">
+<pre></pre>
+</div>
+<div created="20170207083937013" modified="20170207084117164" tags="Network" title="shadowsocks">
+<pre>{
+    &quot;server&quot;:&quot;&quot;,
+    &quot;server_port&quot;:8000,
+    &quot;local_address&quot;: &quot;127.0.0.1&quot;,
+    &quot;local_port&quot;:1080,
+    &quot;password&quot;:&quot;&quot;,
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;rc4-md5&quot;,
+    &quot;fast_open&quot;: false
+}
+
+
+ssserver -c /etc/shadowsocks.json -d start</pre>
 </div>
 <div caption="Contents" created="20170207074523462" list-after="$:/core/ui/SideBar/Open" modified="20170207074601259" tags="$:/tags/SideBar" title="TableOfContents">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
@@ -7963,6 +8023,9 @@ Error message and password prompt
 &lt;&lt;toc-selective-expandable 'TableOfContents'&gt;&gt;
 
 &lt;/div&gt;</pre>
+</div>
+<div created="20170207074723433" modified="20170207083712433" tags="TableOfContents" title="Technology">
+<pre></pre>
 </div>
 <div created="20170207074254948" list="test" modified="20170207074342322" tags="" title="test">
 <pre></pre>
